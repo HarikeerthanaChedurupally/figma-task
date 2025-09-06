@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web App – Bootstrap Responsive Template</title>
+  <meta name="description" content="Responsive Bootstrap 5 web app template with navbar, hero, features, pricing, testimonials, FAQ, contact form, and footer." />
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand: #4f46e5; /* Indigo */
+      --brand-2: #22c55e; /* Green accent */
+    }
+
+    /* Smooth scrolling */
+    html { scroll-behavior: smooth; }
+
+    /* Utilities */
+    .btn-brand { background: var(--brand); color: #fff; }
+    .btn-brand:hover { background: #4338ca; color: #fff; }
+
+    .link-underline { position: relative; }
+    .link-underline::after {
+      content: ""; position: absolute; left: 0; bottom: -2px; width: 0; height: 2px; background: currentColor; transition: width .25s ease;
+    }
+    .link-underline:hover::after { width: 100%; }
+
+    /* Hero */
+    .hero {
+      background: radial-gradient(1200px 600px at 80% -20%, rgba(79,70,229,.15), transparent),
+                  linear-gradient(180deg, rgba(79,70,229,.05), transparent 40%);
+    }
+
+    /* Card hover */
+    .card-hover { transition: transform .2s ease, box-shadow .2s ease; }
+    .card-hover:hover { transform: translateY(-3px); box-shadow: 0 1rem 2rem rgba(0,0,0,.08); }
+
+    /* Feature icon */
+    .feature-icon { width: 3rem; height: 3rem; display: inline-flex; align-items: center; justify-content: center; border-radius: .75rem; background: rgba(79,70,229,.12); color: var(--brand); }
+
+    /* Footer */
+    .footer-link { color: inherit; text-decoration: none; opacity: .8; }
+    .footer-link:hover { opacity: 1; text-decoration: underline; }
+
+    /* Make images nicely rounded */
+    .rounded-2xl { border-radius: 1rem; }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-body position-sticky top-0 border-bottom" style="z-index:1030;">
+    <div class="container py-2">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <i class="bi bi-shield-check"></i>
+        <span class="fw-semibold">MyWebApp</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item">
+            <button id="themeToggle" class="btn btn-sm btn-outline-secondary ms-lg-2" type="button">
+              <i class="bi bi-sun"></i> <span class="d-none d-lg-inline">Theme</span>
+            </button>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-brand ms-lg-2" href="#cta">Get Started</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero py-5 py-lg-6">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <span class="badge text-bg-light border">New</span>
+          <h1 class="display-5 fw-bold mt-3">Design faster. Launch smarter.</h1>
+          <p class="lead text-secondary">A responsive Bootstrap 5 web app shell inspired by your Figma template. Build pages with clean components, micro-interactions, and modern theming.</p>
+          <div class="d-flex gap-2">
+            <a href="#cta" class="btn btn-brand btn-lg">Create Account</a>
+            <a href="#features" class="btn btn-outline-secondary btn-lg">See Features</a>
+          </div>
+          <div class="d-flex align-items-center gap-3 mt-4 small text-secondary">
+            <i class="bi bi-check-circle"></i> No credit card required
+            <i class="bi bi-check-circle"></i> Cancel anytime
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" class="img-fluid rounded-2xl shadow" alt="App preview">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Logos / social proof (optional) -->
+  <section class="py-4 border-bottom">
+    <div class="container">
+      <div class="row row-cols-2 row-cols-md-5 g-4 align-items-center justify-content-center text-center opacity-75">
+        <div class="col"> <i class="bi bi-bootstrap fs-2"></i> </div>
+        <div class="col"> <i class="bi bi-figma fs-2"></i> </div>
+        <div class="col"> <i class="bi bi-git fs-2"></i> </div>
+        <div class="col"> <i class="bi bi-shield-lock fs-2"></i> </div>
+        <div class="col"> <i class="bi bi-cloud-check fs-2"></i> </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-5 py-lg-6">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="badge text-bg-light border">Features</span>
+        <h2 class="mt-3">Everything you need to ship beautiful UIs</h2>
+        <p class="text-secondary">Responsive grid, cards, forms, and delightful micro‑interactions out of the box.
+        </p>
+      </div>
+
+      <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
+        <div class="col">
+          <div class="card h-100 card-hover">
+            <div class="card-body">
+              <div class="feature-icon mb-3"><i class="bi bi-grid-3x3-gap"></i></div>
+              <h5 class="card-title">Responsive Grid</h5>
+              <p class="card-text text-secondary">Built with Bootstrap's powerful grid and utility classes to look great on any device.</p>
+              <a class="link-underline" href="#">Learn more</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 card-hover">
+            <div class="card-body">
+              <div class="feature-icon mb-3"><i class="bi bi-magic"></i></div>
+              <h5 class="card-title">Micro‑interactions</h5>
+              <p class="card-text text-secondary">Subtle hover and focus states, motion and shadows to guide user attention.</p>
+              <a class="link-underline" href="#">See examples</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 card-hover">
+            <div class="card-body">
+              <div class="feature-icon mb-3"><i class="bi bi-brush"></i></div>
+              <h5 class="card-title">Theme Ready</h5>
+              <p class="card-text text-secondary">Light/dark theme toggle implemented via <code>data-bs-theme</code> for instant brand adaptability.</p>
+              <a class="link-underline" href="#">Theming docs</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 card-hover">
+            <div class="card-body">
+              <div class="feature-icon mb-3"><i class="bi bi-window-sidebar"></i></div>
+              <h5 class="card-title">Reusable Components</h5>
+              <p class="card-text text-secondary">Cards, modals, toasts, navbars, accordions, and forms wired up and ready.</p>
+              <a class="link-underline" href="#">Components</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 card-hover">
+            <div class="card-body">
+              <div class="feature-icon mb-3"><i class="bi bi-phone"></i></div>
+              <h5 class="card-title">Mobile First</h5>
+              <p class="card-text text-secondary">Designed from small screens up; grids and utilities keep layouts crisp.</p>
+              <a class="link-underline" href="#">Guidelines</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 card-hover">
+            <div class="card-body">
+              <div class="feature-icon mb-3"><i class="bi bi-shield-check"></i></div>
+              <h5 class="card-title">Accessible by Default</h5>
+              <p class="card-text text-secondary">Semantic HTML, color contrast, focus rings, and ARIA attributes where needed.</p>
+              <a class="link-underline" href="#">A11y checklist</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase / split section -->
+  <section class="py-5 bg-body-secondary">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 order-lg-2">
+          <img class="img-fluid rounded-2xl shadow" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="Dashboard preview" />
+        </div>
+        <div class="col-lg-6">
+          <h3 class="fw-semibold">Crafted for real products</h3>
+          <p class="text-secondary">Use this as a base to map your Figma styles and components. Variables and utility classes help you keep parity between design and code.</p>
+          <ul class="list-unstyled d-grid gap-2">
+            <li><i class="bi bi-check2-circle me-2 text-success"></i>Grid-based layouts</li>
+            <li><i class="bi bi-check2-circle me-2 text-success"></i>Atomic components</li>
+            <li><i class="bi bi-check2-circle me-2 text-success"></i>Keyboard navigation</li>
+          </ul>
+          <a class="btn btn-outline-secondary" href="#">View Docs</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-5 py-lg-6">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="badge text-bg-light border">Pricing</span>
+        <h2 class="mt-3">Simple, transparent plans</h2>
+        <p class="text-secondary">Pick a plan that scales with you.</p>
+      </div>
+
+      <div class="row g-4 row-cols-1 row-cols-md-3">
+        <!-- Card 1 -->
+        <div class="col">
+          <div class="card h-100 border card-hover">
+            <div class="card-body d-flex flex-column">
+              <h6 class="text-uppercase text-secondary">Starter</h6>
+              <h3 class="my-2">₹0 <small class="text-secondary fw-normal">/mo</small></h3>
+              <ul class="list-unstyled small flex-grow-1 d-grid gap-2">
+                <li><i class="bi bi-check2 me-1 text-success"></i> 1 project</li>
+                <li><i class="bi bi-check2 me-1 text-success"></i> Basic components</li>
+                <li><i class="bi bi-x me-1 text-danger"></i> No team seats</li>
+              </ul>
+              <a href="#cta" class="btn btn-outline-secondary w-100 mt-2">Get Started</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 (featured) -->
+        <div class="col">
+          <div class="card h-100 border-2 card-hover">
+            <div class="card-body d-flex flex-column">
+              <div class="d-flex align-items-center justify-content-between">
+                <h6 class="text-uppercase text-secondary">Pro</h6>
+                <span class="badge text-bg-success">Popular</span>
+              </div>
+              <h3 class="my-2">₹999 <small class="text-secondary fw-normal">/mo</small></h3>
+              <ul class="list-unstyled small flex-grow-1 d-grid gap-2">
+                <li><i class="bi bi-check2 me-1 text-success"></i> Unlimited projects</li>
+                <li><i class="bi bi-check2 me-1 text-success"></i> Team collaboration</li>
+                <li><i class="bi bi-check2 me-1 text-success"></i> Priority support</li>
+              </ul>
+              <a href="#cta" class="btn btn-brand w-100 mt-2">Upgrade</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col">
+          <div class="card h-100 border card-hover">
+            <div class="card-body d-flex flex-column">
+              <h6 class="text-uppercase text-secondary">Enterprise</h6>
+              <h3 class="my-2">Custom</h3>
+              <ul class="list-unstyled small flex-grow-1 d-grid gap-2">
+                <li><i class="bi bi-check2 me-1 text-success"></i> SSO & SAML</li>
+                <li><i class="bi bi-check2 me-1 text-success"></i> Uptime SLA</li>
+                <li><i class="bi bi-check2 me-1 text-success"></i> Dedicated manager</li>
+              </ul>
+              <a href="#contact" class="btn btn-outline-secondary w-100 mt-2">Contact Sales</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-5 bg-body-secondary">
+    <div class="container">
+      <div class="text-center mb-4">
+        <span class="badge text-bg-light border">Testimonials</span>
+        <h2 class="mt-3">Loved by designers & developers</h2>
+      </div>
+
+      <div id="quotes" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <figure class="text-center">
+              <blockquote class="blockquote">“This template helped us move 2x faster.”</blockquote>
+              <figcaption class="blockquote-footer">Aditi, Product Designer</figcaption>
+            </figure>
+          </div>
+          <div class="carousel-item">
+            <figure class="text-center">
+              <blockquote class="blockquote">“Clean structure and great accessibility defaults.”</blockquote>
+              <figcaption class="blockquote-footer">Rahul, Front-end Engineer</figcaption>
+            </figure>
+          </div>
+          <div class="carousel-item">
+            <figure class="text-center">
+              <blockquote class="blockquote">“Plug-and-play components with modern theming!”</blockquote>
+              <figcaption class="blockquote-footer">Maya, UX Lead</figcaption>
+            </figure>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#quotes" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#quotes" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <h2 class="fw-semibold">Frequently asked questions</h2>
+          <p class="text-secondary">Answers to common questions about setup, theming, and deployment.</p>
+        </div>
+        <div class="col-lg-7">
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="q1h"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1">How do I change the theme?</button></h2>
+              <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">Use the Theme button in the navbar. It toggles <code>data-bs-theme</code> between <em>light</em> and <em>dark</em>, saved to <code>localStorage</code>.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="q2h"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">Is it mobile friendly?</button></h2>
+              <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">Yes. Built with the mobile‑first Bootstrap grid and utility classes; images and components adjust automatically.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="q3h"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3">Can I add more sections?</button></h2>
+              <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">Absolutely. Duplicate sections, swap content, and map typography/colors to your Figma design tokens.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" class="py-5 py-lg-6 bg-body-tertiary">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <h3 class="mb-1">Ready to build?</h3>
+          <p class="mb-0 text-secondary">Create your account and start shipping today.</p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <a href="#contact" class="btn btn-brand btn-lg">Start Free</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <h2>Contact us</h2>
+          <p class="text-secondary">We usually respond within 1 business day.</p>
+          <div class="d-flex flex-column gap-2 small">
+            <div><i class="bi bi-envelope me-2"></i>hello@example.com</div>
+            <div><i class="bi bi-telephone me-2"></i>+91 98765 43210</div>
+            <div><i class="bi bi-geo-alt me-2"></i>Hyderabad, India</div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <form class="row g-3 needs-validation" novalidate>
+            <div class="col-md-6">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" required>
+              <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required>
+              <div class="invalid-feedback">Please enter a valid email.</div>
+            </div>
+            <div class="col-12">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="4" required></textarea>
+              <div class="invalid-feedback">Message cannot be empty.</div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-brand" type="submit">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5 border-top">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <a class="navbar-brand d-flex align-items-center gap-2 mb-2" href="#">
+            <i class="bi bi-shield-check"></i>
+            <span class="fw-semibold">MyWebApp</span>
+          </a>
+          <p class="text-secondary small">A clean starting point for modern, responsive web apps. Map this to your Figma styles and components.</p>
+        </div>
+        <div class="col-6 col-md-2">
+          <h6>Product</h6>
+          <ul class="list-unstyled small d-grid gap-1">
+            <li><a class="footer-link" href="#features">Features</a></li>
+            <li><a class="footer-link" href="#pricing">Pricing</a></li>
+            <li><a class="footer-link" href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2">
+          <h6>Company</h6>
+          <ul class="list-unstyled small d-grid gap-1">
+            <li><a class="footer-link" href="#">About</a></li>
+            <li><a class="footer-link" href="#">Blog</a></li>
+            <li><a class="footer-link" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6>Subscribe</h6>
+          <form class="d-flex gap-2">
+            <input type="email" class="form-control" placeholder="Email address" aria-label="Email">
+            <button class="btn btn-brand" type="button">Join</button>
+          </form>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between align-items-center border-top pt-3 mt-4 small text-secondary">
+        <span>© <span id="year"></span> MyWebApp. All rights reserved.</span>
+        <div class="d-flex gap-3">
+          <a class="footer-link" href="#">Terms</a>
+          <a class="footer-link" href="#">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast example (micro-interaction) -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1080">
+    <div id="liveToast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="toast-header">
+        <i class="bi bi-lightning-charge me-2"></i>
+        <strong class="me-auto">Welcome</strong>
+        <small>now</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        You’re viewing the Bootstrap web app template.
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme toggle using data-bs-theme
+    const html = document.documentElement;
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) html.setAttribute('data-bs-theme', storedTheme);
+    const btn = document.getElementById('themeToggle');
+    function updateIcon(){
+      const icon = btn.querySelector('i');
+      const isDark = html.getAttribute('data-bs-theme') === 'dark';
+      icon.className = isDark ? 'bi bi-moon-stars' : 'bi bi-sun';
+    }
+    updateIcon();
+    btn.addEventListener('click', () => {
+      const next = html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-bs-theme', next);
+      localStorage.setItem('theme', next);
+      updateIcon();
+    });
+
+    // Form validation
+    (() => {
+      'use strict'
+      const forms = document.querySelectorAll('.needs-validation')
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          } else {
+            event.preventDefault();
+            const toastEl = document.getElementById('liveToast');
+            const toast = new bootstrap.Toast(toastEl);
+            toast.show();
+            form.reset();
+          }
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+  </script>
+</body>
+</html>
